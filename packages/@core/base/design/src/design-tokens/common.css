@@ -1,0 +1,41 @@
+:root {
+  --primary-color: hsl(var(--primary));
+  --success-color: hsl(var(--success));
+  --error-color: hsl(var(--error));
+  --warning-color: hsl(var(--warning));
+  --info-color: hsl(var(--btn-info));
+  --text-color-help-dark: #909399;
+  --border-color-base: #d9d9d9;
+  --border-color-base1: #f0f0f0;
+  --text-color-base: rgb(0 0 0 / 88%);
+  --text-color-secondary: rgb(0 0 0 / 45%);
+  --text-color-quaternary: rgb(0 0 0 / 25%);
+  --text-color-label: #606266;
+  --component-background: #fff;
+  --app-base-background: #eaecf0;
+  --app-content-background: #f1f4f8;
+  --app-main-background: #ebeef5;
+  --hover-background: #f5f7fa;
+  --tree-node-selected-bg: #f5f5f5;
+  --selected-hover-bg: #f5f5f5;
+  --modal-mask-bg: rgb(240 242 245 / 40%);
+}
+
+.dark,
+.dark[data-theme='custom'],
+.dark[data-theme='default'] {
+  --border-color-base: #303030;
+  --border-color-base1: #303030;
+  --text-color-base: #c9d1d9;
+  --text-color-secondary: #8b949e;
+  --text-color-quaternary: #8b949e;
+  --text-color-label: #606266;
+  --component-background: #151515;
+  --app-base-background: #1e1e1e;
+  --app-content-background: #1e1e1e;
+  --app-main-background: #333;
+  --hover-background: #333;
+  --tree-node-selected-bg: rgb(255 255 255 / 8%);
+  --selected-hover-bg: rgb(255 255 255 / 8%);
+  --modal-mask-bg: rgb(0 0 0 / 45%);
+}

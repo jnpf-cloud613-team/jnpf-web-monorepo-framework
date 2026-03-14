@@ -1,0 +1,60 @@
+.vxe-grid {
+  .vxe-table {
+    .vxe-sort--asc-btn,
+    .vxe-sort--desc-btn {
+      height: 12px;
+      font-size: 13px;
+      line-height: 12px;
+
+      &:hover {
+        color: var(--vxe-table-column-icon-border-color);
+      }
+
+      &.sort--active {
+        color: var(--primary-color);
+      }
+    }
+
+    .vxe-cell--filter .vxe-filter--btn:hover {
+      color: var(--vxe-table-column-icon-border-color);
+    }
+
+    .is--filter-active .vxe-cell--filter .vxe-filter--btn {
+      color: var(--primary-color);
+    }
+  }
+
+  .vxe-table--filter-wrapper {
+    border: unset;
+    border-radius: 2px;
+    box-shadow:
+      0 3px 6px -4px #0000001f,
+      0 6px 16px #00000014,
+      0 9px 28px 8px #0000000d;
+
+    .vxe-table--filter-footer {
+      border-top: 1px solid var(--border-color-base1);
+
+      button {
+        &:hover {
+          color: var(--primary-color);
+        }
+
+        &.is--disabled {
+          color: var(--vxe-font-disabled-color) !important;
+        }
+      }
+    }
+  }
+}
+
+.is--checked,
+.is--indeterminate {
+  .vxe-checkbox--label {
+    color: var(--primary-color) !important;
+  }
+}
+
+.vxe-checkbox--icon {
+  color: var(--primary-color) !important;
+}

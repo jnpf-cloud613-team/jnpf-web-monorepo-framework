@@ -1,0 +1,41 @@
+{
+  "name": "@jnpf/hooks",
+  "version": "6.0.0",
+  "homepage": "https://www.jnpfsoft.com",
+  "repository": {
+    "directory": "packages/jnpf/hooks"
+  },
+  "author": {
+    "name": "福建引迈信息技术有限公司",
+    "email": "support@yinmaisoft.com",
+    "url": "https://www.jnpfsoft.com"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "catalog:",
+    "@jnpf/utils": "workspace:*",
+    "@vben/constants": "workspace:*",
+    "@vben/hooks": "workspace:*",
+    "@vben/locales": "workspace:*",
+    "@vben/preferences": "workspace:*",
+    "@vben/stores": "workspace:*",
+    "@vben/types": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "ant-design-vue": "catalog:",
+    "lodash-es": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {}
+}

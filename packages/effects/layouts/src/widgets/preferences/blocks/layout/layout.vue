@@ -1,0 +1,74 @@
+<script setup lang="ts">
+import type { Component } from 'vue';
+
+import type { LayoutType } from '@vben/types';
+
+import { computed } from 'vue';
+
+import { $t } from '@vben/locales';
+
+import { globalShareState } from '@vben-core/shared/global-state';
+
+import { FullContent, HeaderMixedNav, HeaderNav, HeaderSidebarNav, MixedNav, SidebarMixedNav, SidebarNav } from '../../icons';
+
+interface PresetItem {
+  name: string;
+  tip: string;
+  type: LayoutType;
+}
+
+defineOptions({
+  name: 'PreferenceLayout',
+});
+
+const { BasicHelp } = globalShareState.getComponents();
+const modelValue = defineModel<LayoutType>({ default: 'sidebar-nav' });
+
+const components: Record<LayoutType, Component> = {
+  'full-content': FullContent,
+  'header-nav': HeaderNav,
+  'mixed-nav': MixedNav,
+  'sidebar-mixed-nav': SidebarMixedNav,
+  'sidebar-nav': SidebarNav,
+  'header-mixed-nav': HeaderMixedNav,
+  'header-sidebar-nav': HeaderSidebarNav,
+};
+
+const PRESET = computed((): PresetItem[] => [
+  {
+    name: $t('preferences.vertical'),
+    tip: $t('preferences.verticalTip'),
+    type: 'sidebar-nav',
+  },
+  {
+    name: $t('preferences.twoColumn'),
+    tip: $t('preferences.twoColumnTip'),
+    type: 'sidebar-mixed-nav',
+  },
+  {
+    name: $t('preferences.horizontal'),
+    tip: $t('preferences.horizontalTip'),
+    type: 'header-nav',
+  },
+]);
+
+function activeClass(theme: string): string[] {
+  return theme === modelValue.value ? ['outline-box-active'] : [];
+}
+</script>
+
+<template>
+  <div class="flex w-full flex-wrap gap-5">
+    <template v-for="theme in PRESET" :key="theme.name">
+      <div class="flex w-[100px] cursor-pointer flex-col" @click="modelValue = theme.type">
+        <div :class="activeClass(theme.type)" class="outline-box flex-center">
+          <component :is="components[theme.type]" />
+        </div>
+        <div class="text-muted-foreground flex-center hover:text-foreground mt-2 text-center text-xs">
+          {{ theme.name }}
+          <BasicHelp v-if="theme.tip" :text="theme.tip" placement="bottom" />
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

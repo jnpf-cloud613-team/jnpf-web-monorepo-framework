@@ -1,0 +1,72 @@
+.jnpf-easy-cron-inner {
+  .content {
+    .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+      margin-left: 0;
+    }
+  }
+
+  &-config-list {
+    margin: 0 10px;
+    text-align: left;
+
+    .item {
+      margin-top: 5px;
+      font-size: 14px;
+
+      span {
+        padding: 0 2px;
+      }
+    }
+
+    .choice {
+      padding: 5px 8px;
+    }
+
+    .w60 {
+      width: 60px !important;
+      min-width: 60px;
+    }
+
+    .w80 {
+      width: 80px;
+      min-width: 80px;
+    }
+
+    .list {
+      margin: 0 20px;
+    }
+
+    .list-check-item {
+      width: 4em;
+      padding: 1px 3px;
+    }
+
+    .list-cn .list-check-item {
+      width: 5em;
+    }
+
+    .tip-info {
+      color: #999;
+    }
+  }
+
+  .cron-list {
+  }
+
+  .time-list {
+    display: flex;
+    margin-bottom: 10px;
+
+    .ant-input-group-wrapper {
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: unset;
+      }
+    }
+  }
+
+  .allow-click {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,36 @@
+.vben-vxe-table {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius);
+
+  .vben-search-form {
+    flex-shrink: 0;
+    padding: 10px 10px 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: var(--component-background);
+    border-radius: var(--radius);
+  }
+
+  .vxe-grid--form-wrapper {
+    padding: 10px;
+    padding-bottom: 10;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: var(--component-background);
+    border-radius: var(--radius);
+  }
+
+  .vben-vxe-table--main {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--component-background);
+    border-radius: var(--radius);
+
+    .vxe-grid {
+      height: 100%;
+    }
+  }
+}

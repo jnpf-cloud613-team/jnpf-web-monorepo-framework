@@ -1,0 +1,42 @@
+{
+  "name": "@jnpf/utils",
+  "version": "6.0.0",
+  "homepage": "https://www.jnpfsoft.com",
+  "repository": {
+    "directory": "packages/jnpf/utils"
+  },
+  "author": {
+    "name": "福建引迈信息技术有限公司",
+    "email": "support@yinmaisoft.com",
+    "url": "https://www.jnpfsoft.com"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@vben-core/shared": "workspace:*",
+    "@vben/hooks": "workspace:*",
+    "@vben/utils": "workspace:*",
+    "@vue/runtime-core": "catalog:",
+    "ant-design-vue": "catalog:",
+    "crypto-js": "catalog:",
+    "dayjs": "catalog:",
+    "lodash-es": "catalog:",
+    "resize-observer-polyfill": "catalog:",
+    "vue": "catalog:",
+    "vue-types": "catalog:"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "catalog:",
+    "@vben/types": "workspace:*"
+  }
+}

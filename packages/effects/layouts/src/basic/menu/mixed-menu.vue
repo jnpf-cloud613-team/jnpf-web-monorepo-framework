@@ -1,0 +1,54 @@
+<script lang="ts" setup>
+import type { MenuRecordRaw } from '@vben/types';
+
+import type { NormalMenuProps } from '@vben-core/menu-ui';
+
+import { computed, onBeforeMount } from 'vue';
+import { useRoute } from 'vue-router';
+
+import { $t } from '@vben/locales';
+import { findMenuByPath, mapTree } from '@vben/utils';
+
+import { NormalMenu } from '@vben-core/menu-ui';
+
+interface Props extends NormalMenuProps {}
+
+const props = defineProps<Props>();
+
+const emit = defineEmits<{
+  defaultSelect: [MenuRecordRaw, MenuRecordRaw?];
+  enter: [MenuRecordRaw];
+  select: [MenuRecordRaw];
+}>();
+
+const route = useRoute();
+
+const getMenus = computed<MenuRecordRaw[]>(() => {
+  const menus = mapTree(props.menus || [], (item) => {
+    return {
+      ...item,
+      name: item?.i18nCode ? $t(item.i18nCode, item.name) : item.name,
+    };
+  });
+  return menus;
+});
+
+onBeforeMount(() => {
+  const menu = findMenuByPath(props.menus || [], route.path);
+  if (menu) {
+    const rootMenu = (props.menus || []).find((item) => item.path === menu.parents?.[0]);
+    emit('defaultSelect', menu, rootMenu);
+  }
+});
+</script>
+
+<template>
+  <NormalMenu
+    :active-path="activePath"
+    :collapse="collapse"
+    :menus="getMenus"
+    :rounded="rounded"
+    :theme="theme"
+    @enter="(menu) => emit('enter', menu)"
+    @select="(menu) => emit('select', menu)" />
+</template>

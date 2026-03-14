@@ -1,0 +1,172 @@
+{
+  "form": {
+    "fold": "收起",
+    "unfold": "展开",
+    "maxTip": "字符数应小于{0}位"
+  },
+  "modal": {
+    "cancelText": "关闭",
+    "okText": "确认",
+    "close": "关闭",
+    "maximize": "最大化",
+    "restore": "还原"
+  },
+  "table": {
+    "settingDens": "密度",
+    "settingDensDefault": "默认",
+    "settingDensMiddle": "中等",
+    "settingDensSmall": "紧凑",
+    "viewList": "视图切换",
+    "viewSetting": "视图设置",
+    "settingColumn": "列设置",
+    "settingColumnShow": "列展示",
+    "settingIndexColumnShow": "序号列",
+    "settingSelectColumnShow": "勾选列",
+    "settingFixedLeft": "固定到左侧",
+    "settingFixedRight": "固定到右侧",
+    "settingFullScreen": "全屏",
+    "index": "序号",
+    "status": "状态",
+    "action": "操作",
+    "summary": "合计",
+    "total": "共 {total} 条数据"
+  },
+  "time": {
+    "before": "前",
+    "after": "后",
+    "just": "刚刚",
+    "seconds": "秒",
+    "minutes": "分钟",
+    "hours": "小时",
+    "days": "天"
+  },
+  "tree": {
+    "reload": "刷新数据",
+    "selectAll": "选择全部",
+    "unSelectAll": "取消选择",
+    "expandAll": "展开全部",
+    "unExpandAll": "折叠全部",
+    "checkStrictly": "层级关联",
+    "checkUnStrictly": "层级独立"
+  },
+  "upload": {
+    "save": "保存",
+    "upload": "上传",
+    "buttonText": "点击上传",
+    "imgUpload": "图片上传",
+    "imgDragger": "单击或拖动图片到此区域上传",
+    "fileDragger": "单击或拖动文件到此区域上传",
+    "uploaded": "已上传",
+    "operating": "操作",
+    "del": "删除",
+    "download": "下载",
+    "downloadAll": "全部下载",
+    "saveWarn": "请等待文件上传后，保存!",
+    "saveError": "没有上传成功的文件，无法保存!",
+    "preview": "预览",
+    "choose": "选择文件",
+    "accept": "支持{0}格式",
+    "acceptUpload": "只能上传{0}格式文件",
+    "maxSize": "单个文件不超过{0}MB",
+    "maxSizeMultiple": "只能上传不超过{0}MB的文件!",
+    "maxNumber": "最多只能上传{0}个文件",
+    "legend": "略缩图",
+    "fileName": "文件名",
+    "fileSize": "文件大小",
+    "fileStatue": "状态",
+    "startUpload": "开始上传",
+    "uploadSuccess": "上传成功",
+    "uploadError": "上传失败",
+    "uploading": "上传中",
+    "paused": "暂停中",
+    "waiting": "等待中",
+    "checking": "文件校验中",
+    "uploadWait": "请等待文件上传结束后操作",
+    "reUploadFailed": "重新上传失败文件",
+    "uploadImg": "请上传图片",
+    "viewImage": "查看图片",
+    "view": "查看",
+    "imageMaxNumber": "最多可以上传{0}张图片",
+    "imageMaxSize": "图片大小超过{size}{unit}",
+    "fileMaxNumber": "最多可以上传{0}个文件",
+    "fileMaxSize": "文件大小超过{size}{unit}",
+    "fileTypeCheck": "请选择{0}类型的文件",
+    "fileReadError": "文件{0}读取出错，请检查该文件",
+    "videoNoPreview": "音视频文件不能预览",
+    "zipNoPreview": "压缩包不能预览",
+    "image": "图片",
+    "video": "视频",
+    "audio": "音频"
+  },
+  "jnpf": {
+    "common": {
+      "allData": "全部数据",
+      "selected": "已选",
+      "clearAll": "清空已选",
+      "autoGenerate": "系统自动生成"
+    },
+    "areaSelect": {
+      "modalTitle": "省市区"
+    },
+    "calculate": {
+      "storage": "用于展示计算结果，且数据同时会保存入库",
+      "unStorage": "用于展示计算结果，且数据不会保存"
+    },
+    "dateRange": {
+      "startPlaceholder": "开始日期",
+      "endPlaceholder": "结束日期"
+    },
+    "timeRange": {
+      "startPlaceholder": "开始时间",
+      "endPlaceholder": "结束时间"
+    },
+    "iconPicker": {
+      "select": "选择",
+      "modalTitle": "图标选择",
+      "searchPlaceholder": "请输入关键词",
+      "ymIcon": "ymIcon图标",
+      "ymCustom": "ymCustom图标"
+    },
+    "location": {
+      "modalTitle": "选择位置",
+      "searchPlaceholder": "搜索或直接在地图上点选",
+      "relocation": "重新定位",
+      "location": "添加定位"
+    },
+    "numberRange": {
+      "min": "最小值",
+      "max": "最大值"
+    },
+    "organizeSelect": {
+      "modalTitle": "选择组织"
+    },
+    "posSelect": {
+      "modalTitle": "选择岗位"
+    },
+    "roleSelect": {
+      "modalTitle": "选择角色"
+    },
+    "groupSelect": {
+      "modalTitle": "选择分组"
+    },
+    "userSelect": {
+      "modalTitle": "选择用户"
+    },
+    "popupAttr": {
+      "storage": "用于展示关联弹窗的属性，且数据同时会保存入库",
+      "unStorage": "用于展示关联弹窗的属性，且数据不会保存"
+    },
+    "popupSelect": {
+      "modalTitle": "选择数据"
+    },
+    "relationFormAttr": {
+      "storage": "用于展示关联表单的属性，且数据同时会保存入库",
+      "unStorage": "用于展示关联表单的属性，且数据不会保存"
+    },
+    "sign": {
+      "signTip": "手写签名",
+      "signPlaceholder": "请签名",
+      "operateTip": "请在此区域使用鼠标手写签名"
+    }
+  }
+}

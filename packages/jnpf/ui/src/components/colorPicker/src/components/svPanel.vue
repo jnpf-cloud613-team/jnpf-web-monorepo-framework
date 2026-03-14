@@ -1,0 +1,145 @@
+<script lang="ts">
+import type { PropType } from 'vue';
+
+import type Color from '../lib/color';
+
+import { computed, defineComponent, getCurrentInstance, onMounted, ref, watch } from 'vue';
+
+import draggable from '../lib/draggable';
+
+export default defineComponent({
+  name: 'SvPanel',
+  props: {
+    color: {
+      type: Object as PropType<Color>,
+    },
+  },
+  setup(props) {
+    const instance = getCurrentInstance();
+
+    // data
+    const cursorTop = ref(0);
+    const cursorLeft = ref(0);
+    const background = ref('hsl(0, 100%, 50%)');
+
+    const colorValue = computed(() => {
+      const hue = props.color?.get('hue');
+      const value = props.color?.get('value');
+      return { hue, value };
+    });
+
+    watch(
+      () => colorValue.value,
+      () => {
+        update();
+      },
+    );
+
+    function update() {
+      const saturation = props.color?.get('saturation');
+      const value = props.color?.get('value');
+
+      const ele = instance?.vnode.el as HTMLElement;
+
+      cursorLeft.value = (saturation * ele.clientWidth) / 100;
+      cursorTop.value = ((100 - value) * ele.clientHeight) / 100;
+
+      background.value = `hsl(${props.color?.get('hue')}, 100%, 50%)`;
+    }
+    function handleDrag(event) {
+      const ele = instance?.vnode.el as HTMLElement;
+      const rect = ele.getBoundingClientRect();
+
+      let left = event.clientX - rect.left;
+      let top = event.clientY - rect.top;
+
+      left = Math.max(0, left);
+      left = Math.min(left, rect.width);
+      top = Math.max(0, top);
+      top = Math.min(top, rect.height);
+
+      cursorLeft.value = left;
+      cursorTop.value = top;
+
+      props.color?.set({
+        saturation: (left / rect.width) * 100,
+        value: 100 - (top / rect.height) * 100,
+      });
+    }
+
+    onMounted(() => {
+      const ele = instance?.vnode.el as HTMLElement;
+      draggable(ele, {
+        drag: (event) => {
+          handleDrag(event);
+        },
+        end: (event) => {
+          handleDrag(event);
+        },
+      });
+    });
+
+    return {
+      background,
+      colorValue,
+      cursorLeft,
+      cursorTop,
+      handleDrag,
+      update,
+    };
+  },
+});
+</script>
+
+<template>
+  <div :style="{ backgroundColor: background }" class="ant-color-svpanel">
+    <div class="ant-color-svpanel__white"></div>
+    <div class="ant-color-svpanel__black"></div>
+    <div
+      :style="{
+        top: `${cursorTop}px`,
+        left: `${cursorLeft}px`,
+      }"
+      class="ant-color-svpanel__cursor">
+      <div></div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.ant-color-svpanel {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  margin-right: 10px;
+
+  .ant-color-svpanel__white,
+  .ant-color-svpanel__black {
+    position: absolute;
+    inset: 0;
+  }
+
+  .ant-color-svpanel__white {
+    background: linear-gradient(to right, #fff, rgb(255 255 255 / 0%));
+  }
+
+  .ant-color-svpanel__black {
+    background: linear-gradient(to top, #000, rgb(0 0 0 / 0%));
+  }
+
+  .ant-color-svpanel__cursor {
+    position: absolute;
+
+    > div {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 1.5px #fff,
+        inset 0 0 1px 1px rgb(0 0 0 / 30%),
+        0 0 1px 2px rgb(0 0 0 / 40%);
+      transform: translate(-2px, -2px);
+    }
+  }
+}
+</style>

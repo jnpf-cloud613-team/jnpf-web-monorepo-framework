@@ -1,0 +1,235 @@
+// button reset
+.ant-btn {
+  &-link:hover,
+  &-link:focus,
+  &-link:active {
+    border-color: transparent !important;
+  }
+
+  &-text:not([disabled]):hover,
+  &-text:not([disabled]):focus,
+  &-text:not([disabled]):active {
+    color: inherit !important;
+    border-color: transparent !important;
+  }
+
+  &.ant-btn-link.is-disabled {
+    color: rgb(0 0 0 / 25%) !important;
+    text-shadow: none;
+    cursor: not-allowed !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none;
+
+    &:hover {
+      color: rgb(0 0 0 / 25%);
+    }
+  }
+
+  &-error.is-disabled {
+    color: rgb(0 0 0 / 25%);
+    cursor: not-allowed;
+    background-color: rgb(0 0 0 / 4%);
+    border-color: hsl(240deg 5.9% 90%);
+  }
+
+  &-success.ant-btn-link:not([disabled='disabled']) {
+    color: hsl(var(--success));
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--success-400));
+      border-color: transparent;
+    }
+
+    &:active {
+      color: hsl(var(--success-600));
+    }
+  }
+
+  &-info.ant-btn-link:not([disabled='disabled']) {
+    color: hsl(var(--btn-info));
+
+    &:hover,
+    &:focus {
+      color: #abadb1;
+      border-color: transparent;
+    }
+
+    &:active {
+      color: #767980;
+    }
+  }
+
+  &-success.ant-btn-link.ant-btn-loading,
+  &-warning.ant-btn-link.ant-btn-loading,
+  &-danger.ant-btn-link.ant-btn-loading,
+  &-error.ant-btn-link.ant-btn-loading,
+  &-info.ant-btn-link.ant-btn-loading,
+  &.ant-btn-link.ant-btn-loading {
+    &::before {
+      background: transparent;
+    }
+  }
+
+  &-success:not(.ant-btn-link, .is-disabled),
+  &-success.ant-btn-default:not(.ant-btn-link, .is-disabled) {
+    color: #fff;
+    background-color: hsl(var(--success));
+    border-color: hsl(var(--success));
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: hsl(var(--success-400));
+      border-color: hsl(var(--success-400));
+    }
+
+    &:active {
+      background-color: hsl(var(--success-600));
+      border-color: hsl(var(--success-600));
+    }
+  }
+
+  &-warning.ant-btn-link:not([disabled='disabled']) {
+    color: hsl(var(--warning));
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--warning-400));
+      border-color: transparent;
+    }
+
+    &:active {
+      color: hsl(var(--warning-600));
+    }
+  }
+
+  &-warning:not(.ant-btn-link, .is-disabled, .ant-btn-dashed),
+  &-warning.ant-btn-default:not(.ant-btn-link, .is-disabled) {
+    color: #fff;
+    background-color: hsl(var(--warning));
+    border-color: hsl(var(--warning));
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: hsl(var(--warning-400));
+      border-color: hsl(var(--warning-400));
+    }
+
+    &:active {
+      background-color: hsl(var(--warning-600));
+      border-color: hsl(var(--warning-600));
+    }
+  }
+
+  &-danger.ant-btn-link:not([disabled='disabled']),
+  &-error.ant-btn-link:not([disabled='disabled']) {
+    color: hsl(var(--destructive));
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--destructive-400));
+      border-color: transparent;
+    }
+
+    &:active {
+      color: hsl(var(--destructive-600));
+    }
+  }
+
+  &-danger:not(.ant-btn-link, .is-disabled),
+  &-error:not(.ant-btn-link, .is-disabled),
+  &-danger.ant-btn-default:not(.ant-btn-link, .is-disabled),
+  &-error.ant-btn-default:not(.ant-btn-link, .is-disabled) {
+    color: #fff;
+    background-color: hsl(var(--destructive));
+    border-color: hsl(var(--destructive));
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: hsl(var(--destructive-400));
+      border-color: hsl(var(--destructive-400));
+    }
+
+    &:active {
+      background-color: hsl(var(--destructive-600));
+      border-color: hsl(var(--destructive-600));
+    }
+  }
+
+  &-dangerous.ant-btn-default:not(.ant-btn-link, .is-disabled) {
+    color: hsl(var(--destructive));
+    border-color: hsl(var(--destructive));
+  }
+
+  &-info:not(.ant-btn-link, .is-disabled),
+  &-info.ant-btn-default:not(.ant-btn-link, .is-disabled) {
+    color: #fff;
+    background-color: hsl(var(--btn-info));
+    border-color: hsl(var(--btn-info));
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: #abadb1;
+      border-color: #abadb1;
+    }
+
+    &:active {
+      background-color: #767980;
+      border-color: #767980;
+    }
+  }
+}
+
+.dark,
+.dark[data-theme='custom'],
+.dark[data-theme='default'] {
+  .ant-btn {
+    &.ant-btn-link.is-disabled {
+      color: rgb(255 255 255 / 25%) !important;
+      text-shadow: none;
+      cursor: not-allowed !important;
+      background-color: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none;
+
+      &:hover {
+        color: rgb(255 255 255 / 25%) !important;
+      }
+    }
+
+    &.ant-btn-default {
+      color: #c9d1d9;
+      background: transparent;
+      border: 1px solid transparent;
+      border-color: #303030;
+      box-shadow: 0 2px 0 rgb(0 0 0 / 1.5%);
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: transparent;
+      }
+    }
+
+    & {
+      &[disabled]:not(.ant-btn-text) {
+        color: rgb(255 255 255 / 30%);
+        background-color: rgb(255 255 255 / 8%);
+        border-color: #424242;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: rgb(255 255 255 / 30%);
+          background-color: rgb(255 255 255 / 8%);
+          border-color: #424242;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "name": "@jnpf/ui",
+  "version": "6.0.0",
+  "#main": "./dist/index.mjs",
+  "#module": "./dist/index.mjs",
+  "homepage": "https://www.jnpfsoft.com",
+  "repository": {
+    "directory": "packages/jnpf/ui"
+  },
+  "type": "module",
+  "scripts": {
+    "#build": "pnpm unbuild",
+    "#prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./src/index.ts",
+      "//default": "./dist/index.mjs"
+    },
+    "./style": {
+      "default": "./src/style/index.scss"
+    },
+    "./modal": {
+      "types": "./src/core/modal/index.ts",
+      "default": "./src/core/modal/index.ts"
+    },
+    "./drawer": {
+      "types": "./src/core/drawer/index.ts",
+      "default": "./src/core/drawer/index.ts"
+    },
+    "./popup": {
+      "types": "./src/core/popup/index.ts",
+      "default": "./src/core/popup/index.ts"
+    },
+    "./form": {
+      "types": "./src/kit/basicForm/index.ts",
+      "default": "./src/kit/basicForm/index.ts"
+    },
+    "./vxeTable": {
+      "types": "./src/kit/vxeTable/index.ts",
+      "default": "./src/kit/vxeTable/index.ts"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "default": "./src/index.ts"
+      }
+    }
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "catalog:",
+    "@ant-design/icons-vue": "catalog:",
+    "@jnpf/hooks": "workspace:*",
+    "@jnpf/utils": "workspace:*",
+    "@vben-core/composables": "workspace:*",
+    "@vben-core/shadcn-ui": "workspace:*",
+    "@vben-core/shared": "workspace:*",
+    "@vben/hooks": "workspace:*",
+    "@vben/icons": "workspace:*",
+    "@vben/locales": "workspace:*",
+    "@vben/preferences": "workspace:*",
+    "@vben/stores": "workspace:*",
+    "@vue/shared": "catalog:",
+    "@vueuse/core": "catalog:",
+    "@vueuse/integrations": "catalog:",
+    "ant-design-vue": "catalog:",
+    "cron-parser": "catalog:",
+    "dayjs": "catalog:",
+    "jsbarcode": "catalog:",
+    "lodash-es": "catalog:",
+    "monaco-editor": "catalog:",
+    "qrcode": "catalog:",
+    "sortablejs": "catalog:",
+    "spark-md5": "catalog:",
+    "tinymce": "catalog:",
+    "vditor": "catalog:",
+    "vue": "catalog:",
+    "vue-simple-uploader": "catalog:",
+    "vxe-pc-ui": "catalog:",
+    "vxe-table": "catalog:"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "catalog:",
+    "@vben/types": "workspace:*"
+  }
+}
